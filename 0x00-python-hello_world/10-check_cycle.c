@@ -1,20 +1,18 @@
 #include "lists.h"
 int check_cycle(listint_t* list)
 {
+    listint_t *fast = list, *slow = list;
     if (list == NULL || list->next == NULL)
     {
         return (0);
     }
-    listint_t *fast, *slow;
-    slow = list;
-    fast = slow->next;
-    while (slow != NULL && fast->next != NULL && fast->next->next != NULL)
+    while (slow && fast && fast->next)
     {
+        slow = list->next;
+        fast = list->next->next;
         if (slow == fast)
         {
             return (1);
-            slow = slow->next;
-            fast = fast->next->next;
         }
     }
         return (0);
