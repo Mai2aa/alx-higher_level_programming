@@ -6,4 +6,4 @@ def no_c(my_string):
             continue
         else:
             new = new + i
-    return new       
+    return new
