@@ -1,7 +1,7 @@
 #include "Python.h"
 /**
  * print_python_list_info - prints python list
- * @p - python object
+ * @p: python object
 */
 void print_python_list_info(PyObject *p)
 {
