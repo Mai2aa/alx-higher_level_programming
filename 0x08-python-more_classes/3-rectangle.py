@@ -38,11 +38,11 @@ class Rectangle:
         return self.__height * self.__width
 
     def perimeter(self):
-        if self.__height == 0 or self.__width == 0:
-            return 0
         return (self.__height + self.__width) * 2
 
     def __str__(self):
+        if self.__height == 0 or self.__width == 0:
+            return ""
         rectangle = ""
         for i in range(self.__height - 1):
             rectangle += "#" * self.__width + "\n"
