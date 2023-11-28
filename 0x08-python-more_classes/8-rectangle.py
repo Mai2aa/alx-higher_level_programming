@@ -61,7 +61,7 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
-    def bigger_or_equal(rect1, rect2):
+    def bigger_or_equal(self, rect1, rect2):
         if not isinstance(rect1, Rectangle):
             raise TypeError("rect1 must be an instance of Rectangle")
         if not isinstance(rect2, Rectangle):
