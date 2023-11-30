@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-"""magic string"""
-
-
 def magic_string():
-    iteration = magic_string.iteration if hasattr(magic_string, 'iteration') else 0
-    magic_string.iteration = iteration + 1
+    magic_string.iteration = getattr(magic_string, 'iteration', 0) + 1
     return "BestSchool" * magic_string.iteration
