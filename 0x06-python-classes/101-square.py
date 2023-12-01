@@ -37,15 +37,14 @@ class Square:
     def area(self):
         return self.__size ** 2
 
-    def my_print(self):
+    def __str__(self):
         if self.__size == 0:
             print()
             return
         else:
+            lines = []
             for i in range(self.__position[1]):
-                print()
+                lines.append("\n")
             for j in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
-
-    def __str__(self):
-        return self.my_print()
+                lines.append(" " * self.__position[0] + "#" * self.__size)
+        return "\n".join(lines)
