@@ -3,13 +3,10 @@
 
 
 import sys
-import json
+from save_to_json_file import save_to_json_file
+from load_from_json_file import load_from_json_file
 
 
-with open('add_item.json', 'r', encoding='utf-8') as file:
-    x = json.load(file)
-
-x.extend(sys.argv[1:])
-
-with open('add_item.json', 'w', encoding='utf-8') as file:
-    json.dump(x, file)
+items = load_from_json_file('add_item.json') or []
+items.extend(sys.argv[1:])
+save_to_json_file(items, 'add_item.json')
