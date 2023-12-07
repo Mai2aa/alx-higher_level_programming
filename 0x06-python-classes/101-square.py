@@ -1,5 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 """print square instance"""
+
+
+from ast import pattern
 
 
 class Square:
@@ -38,13 +41,11 @@ class Square:
         return self.__size ** 2
 
     def __str__(self):
-        if self.__size == 0:
-            print()
-            return
-        else:
-            lines = []
-            for i in range(self.__position[1]):
-                lines.append("\n")
-            for j in range(self.__size):
-                lines.append(" " * self.__position[0] + "#" * self.__size)
-        return "\n".join(lines)
+        if self.size == 0:
+            return ""
+        square_str = ''
+        for i in range(self.position[1]):
+            square_str += "\n"
+        for j in range(self.size):
+            square_str += " " * self.position[0] + "#" * self.size + "\n"
+        return square_str.rstrip()
