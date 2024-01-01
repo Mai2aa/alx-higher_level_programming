@@ -3,6 +3,7 @@
 
 
 def text_indentation(text):
+    """a function that prints a text with two lines after . ? :"""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
