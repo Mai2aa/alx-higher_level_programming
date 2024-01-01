@@ -5,14 +5,20 @@
 def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    characters = ['.', '?', ':']
-    new = ''
-    result = ''
+
+    punctuation_marks = ['.', '?', ':']
+    lines = []
+    current_line = ""
+
     for char in text:
-        new += char
-        if char in characters:
-            result += new + "\n\n"
-            new = ''
-    if new:
-        result += new
-    print(result)
+        current_line += char
+        if char in punctuation_marks:
+            lines.append(current_line.strip())
+            lines.append("")  # Add two empty lines after the punctuation mark
+            current_line = ""
+
+    if current_line:
+        lines.append(current_line.strip())
+
+    formatted_text = "\n".join(lines)
+    print(formatted_text)

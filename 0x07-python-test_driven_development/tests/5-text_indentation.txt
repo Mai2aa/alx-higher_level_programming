@@ -5,13 +5,11 @@ using ''text_indentation'' function
 ::
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+    >>> text_indentation("maisa adil. how are you?")
+    maisa adil.
+    <BLANKLINE>
+    how are you?
+    <BLANKLINE>
     >>> text_indentation(5)
     Traceback (most recent call last):
     TypeError: text must be a string
-
-    >>> text_indentation("maisa adil. how are you? ")
-    maisa adil.
-
-    how are you? 
-
-    
