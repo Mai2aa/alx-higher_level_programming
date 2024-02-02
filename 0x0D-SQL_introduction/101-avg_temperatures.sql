@@ -3,4 +3,4 @@
 SELECT city, AVG(temperature) AS avg_temp
 FROM temperature_table
 GROUP BY city
-ORDER BY average_temperature DESC;
+ORDER BY avg_temp DESC;
