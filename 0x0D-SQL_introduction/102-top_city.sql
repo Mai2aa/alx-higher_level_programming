@@ -1,6 +1,6 @@
 -- top 3 cities in temrture
 
-SELECT city, MAX(value) AS avg_temp
+SELECT city, AVG(value) AS avg_temp
 FROM temperatures
 WHERE month = 7 OR month = 8
 GROUP BY city
