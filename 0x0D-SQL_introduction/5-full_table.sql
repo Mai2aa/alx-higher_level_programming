@@ -1,3 +1,4 @@
 -- prints  full description of a table
-SELECT COLUMNS
-FROM first_table;
+SELECT *
+FROM COLUMNS
+WHERE TABLE_NAME = 'first_table'
