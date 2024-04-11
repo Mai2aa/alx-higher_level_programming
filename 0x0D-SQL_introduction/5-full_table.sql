@@ -1,3 +1,2 @@
 -- prints  full description of a table
-SHOW COLUMNS
-FROM first_table;
+SHOW TABLE first_table;
