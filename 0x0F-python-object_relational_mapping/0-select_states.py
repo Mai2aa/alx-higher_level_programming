@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+import sys
 import MySQLdb
 
+username = sys.argv[1]
+password = sys.argv[2]
+database = sys.argv[3]
 
 conn = MySQLdb.connect(host="localhost", port=3306,
-                       user="root", passwd="root", db="my_db", charset="utf8")
+                       user=username, passwd=password, db=database)
 cur = conn.cursor()
 cur.execute("SELECT * FROM states ORDER BY id ASC")
 query_rows = cur.fetchall()
