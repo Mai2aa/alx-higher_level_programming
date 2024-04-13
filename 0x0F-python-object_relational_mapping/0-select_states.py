@@ -4,7 +4,7 @@ import sys
 import MySQLdb
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -16,7 +16,7 @@ if __name__ == '__main__':
         print("Can't connect with the database: {}".format(e))
         sys.exit(1)
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
