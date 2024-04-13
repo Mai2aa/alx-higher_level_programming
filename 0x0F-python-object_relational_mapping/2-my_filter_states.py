@@ -9,7 +9,7 @@ if __name__ == '__main__':
                            passwd=sys.argv[2], db=sys.argv[3])
     cur = conn.cursor()
     state_name = sys.argv[4]
-    cur.execute("SELECT * FROM states WHERE name='{}'
+    cur.execute("SELECT * FROM states WHERE name=BINARY'{}'\
                 ORDER BY id ASC".format(state_name))
     rows = cur.fetchall()
     for row in rows:
