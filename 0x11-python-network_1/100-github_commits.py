@@ -5,6 +5,13 @@ import sys
 
 
 if __name__ == "__main__":
-    url = "https://developer.github.com/v3/repos/commits/".format(
-            sys.argv[1], sys.argv[2])
+    url = "https://developer.github.com/v3/repos/commits/"
+    repo_name = sys.argv[1]
+    owner_name = sys.argv[2]
     response = requests.get(url)
+    commits = response.json()
+    for commit in commits[:10]:
+        sha = commit["sha"]
+        auth_name = commit["commit"]["author"]["name"]
+        print("{}: {}".format(sha, auth_name))
+
