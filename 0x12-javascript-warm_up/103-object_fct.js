@@ -4,12 +4,9 @@ const myObject = {
   value: 12
 };
 console.log(myObject);
-Object.defineProperty(myObject, 'incr', {
-  enumerable: true,
-  value: function () {
-    this.value++;
-  }
-});
+myObject.incr = function(){
+	this.value++;
+};
 myObject.incr();
 console.log(myObject);
 myObject.incr();
