@@ -5,7 +5,7 @@ const myObject = {
 };
 console.log(myObject);
 Object.defineProperty(myObject, 'incr', {
-  enumerable: false,
+  enumerable: true,
   value: function () {
     this.value++;
   }
